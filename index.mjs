@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import routes from './routes/index.routes.mjs'
 import database from './config/database.mjs';
+import seedDatabase from "./misc/fakejs.mjs";
 
 // Load environment variables from .env file
 dotenv.config();
@@ -22,6 +23,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 // Use the routes from the routes directory
 routes(app);
+
+// seedDatabase()
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

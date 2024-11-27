@@ -26,7 +26,7 @@ const postSchema = new mongoose.Schema({
     slug: {
         type: String,
         required: true,
-        unique: true
+        // unique: true
     },
     thumbnail: { type: String },
     deleted: {
@@ -43,6 +43,6 @@ const postSchema = new mongoose.Schema({
     }
 );
 
-const Post = mongoose.model('Post', postSchema);
+const Post = mongoose.model('Post', postSchema, 'post');
 
 export default Post;

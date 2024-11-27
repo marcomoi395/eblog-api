@@ -4,7 +4,7 @@ const categorySchema = new mongoose.Schema({
         name: {
             type: String,
             required: true,
-            unique: true
+            // unique: true
         },
         description: {
             type: String,
@@ -13,7 +13,7 @@ const categorySchema = new mongoose.Schema({
         slug: {
             type: String,
             required: true,
-            unique: true
+            // unique: true
         },
         thumbnail: { type: String },
         deleted: {
@@ -30,6 +30,6 @@ const categorySchema = new mongoose.Schema({
     }
 );
 
-const Category = mongoose.model('Post', categorySchema);
+const Category = mongoose.model('Category', categorySchema, 'category');
 
 export default Category;
