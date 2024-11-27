@@ -2,9 +2,13 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import routes from './routes/index.routes.mjs'
+import database from './config/database.mjs';
 
 // Load environment variables from .env file
 dotenv.config();
+
+// Connect to the database
+database();
 
 const app = express();
 
@@ -14,7 +18,7 @@ app.set('views', './views');
 
 // Configure body-parser middleware
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({extended: true}));
 
 // Use the routes from the routes directory
 routes(app);

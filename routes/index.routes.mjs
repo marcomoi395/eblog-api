@@ -1,4 +1,3 @@
-import express from "express";
 import meRoute from "./me.route.mjs"
 import adminRoute from "./admin.route.mjs"
 import authRoute from "./auth.route.mjs"
